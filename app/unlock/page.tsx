@@ -32,13 +32,20 @@ export default function Unlock() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-4">
-        {/* Top Banner Ad - Use leaderboard */}
+        {/* Top Banner Ad - Mix of Google AdSense and other networks */}
         <div className="mb-4">
-          <RealAdContainer 
-            adType="leaderboard-728x90" 
-            onClick={handleAdClick}
-            title="Advertisement"
-          />
+          <div className="grid md:grid-cols-2 gap-4">
+            <RealAdContainer 
+              adType="google-leaderboard" 
+              onClick={handleAdClick}
+              title="Google AdSense"
+            />
+            <RealAdContainer 
+              adType="leaderboard-728x90" 
+              onClick={handleAdClick}
+              title="Advertisement"
+            />
+          </div>
         </div>
 
         {/* Main Content Grid */}
@@ -88,12 +95,12 @@ export default function Unlock() {
               )}
             </div>
 
-            {/* Ad Grid */}
+            {/* Ad Grid with Google AdSense */}
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               <RealAdContainer 
-                adType="banner-300x250" 
+                adType="google-banner" 
                 onClick={handleAdClick}
-                title="Advertisement"
+                title="Google AdSense"
               />
               <RealAdContainer 
                 adType="banner-300x250" 

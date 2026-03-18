@@ -71,20 +71,32 @@ export default function Home() {
       </header>
 
       <div className="max-w-7xl mx-auto px-6 py-8">
-        {/* Top Banner Ad */}
+        {/* Top Banner Ad - Mix of Google AdSense and other networks */}
         <div className="mb-8">
-          <RealAdContainer 
-            adType="leaderboard-728x90" 
-            onClick={handleAdClick}
-            title="Sponsored Content"
-          />
+          <div className="grid md:grid-cols-2 gap-4">
+            <RealAdContainer 
+              adType="google-leaderboard" 
+              onClick={handleAdClick}
+              title="Google AdSense"
+            />
+            <RealAdContainer 
+              adType="leaderboard-728x90" 
+              onClick={handleAdClick}
+              title="Sponsored Content"
+            />
+          </div>
         </div>
 
         {/* Main Content */}
         <div className="grid lg:grid-cols-12 gap-8">
           {/* Left Sidebar */}
           <div className="lg:col-span-2">
-            <div className="sticky top-8">
+            <div className="sticky top-8 space-y-4">
+              <RealAdContainer 
+                adType="google-skyscraper" 
+                onClick={handleAdClick}
+                title="Google AdSense"
+              />
               <RealAdContainer 
                 adType="skyscraper-160x600" 
                 onClick={handleAdClick}
@@ -201,13 +213,13 @@ export default function Home() {
                 <p className="text-gray-400">Support our platform by viewing our partner offers</p>
               </div>
 
-              {/* Ad Grid */}
+              {/* Ad Grid - Mix of Google AdSense and other networks */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="glass-effect rounded-xl p-1 hover:border-blue-500/50 transition-all duration-300">
                   <RealAdContainer 
-                    adType="banner-300x250" 
+                    adType="google-banner" 
                     onClick={handleAdClick}
-                    title="Featured Offer"
+                    title="Google AdSense"
                   />
                 </div>
                 <div className="glass-effect rounded-xl p-1 hover:border-purple-500/50 transition-all duration-300">
@@ -215,6 +227,31 @@ export default function Home() {
                     adType="banner-300x250" 
                     onClick={handleAdClick}
                     title="Premium Deal"
+                  />
+                </div>
+              </div>
+
+              {/* Additional Google AdSense Row */}
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="glass-effect rounded-xl p-1 hover:border-green-500/50 transition-all duration-300">
+                  <RealAdContainer 
+                    adType="google-square" 
+                    onClick={handleAdClick}
+                    title="Google AdSense"
+                  />
+                </div>
+                <div className="glass-effect rounded-xl p-1 hover:border-orange-500/50 transition-all duration-300">
+                  <RealAdContainer 
+                    adType="banner-300x250" 
+                    onClick={handleAdClick}
+                    title="Featured Offer"
+                  />
+                </div>
+                <div className="glass-effect rounded-xl p-1 hover:border-pink-500/50 transition-all duration-300">
+                  <RealAdContainer 
+                    adType="container" 
+                    onClick={handleAdClick}
+                    title="Sponsored"
                   />
                 </div>
               </div>
@@ -270,6 +307,11 @@ export default function Home() {
           <div className="lg:col-span-2">
             <div className="sticky top-8 space-y-6">
               <RealAdContainer 
+                adType="google-skyscraper" 
+                onClick={handleAdClick}
+                title="Google AdSense"
+              />
+              <RealAdContainer 
                 adType="skyscraper-160x600" 
                 onClick={handleAdClick}
                 title="Advertisement"
@@ -297,13 +339,20 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Mobile Banner */}
+        {/* Mobile Banner - Mix of Google AdSense and other networks */}
         <div className="mt-8 md:hidden">
-          <RealAdContainer 
-            adType="mobile-banner-320x50" 
-            onClick={handleAdClick}
-            title="Mobile Offer"
-          />
+          <div className="space-y-4">
+            <RealAdContainer 
+              adType="google-mobile" 
+              onClick={handleAdClick}
+              title="Google AdSense"
+            />
+            <RealAdContainer 
+              adType="mobile-banner-320x50" 
+              onClick={handleAdClick}
+              title="Mobile Offer"
+            />
+          </div>
         </div>
       </div>
 

@@ -2,9 +2,10 @@
 
 import { useRef, useMemo } from 'react';
 import Script from 'next/script';
+import GoogleAd from './GoogleAd';
 
 interface RealAdContainerProps {
-  adType: 'banner-468x60' | 'banner-300x250' | 'skyscraper-160x300' | 'skyscraper-160x600' | 'container' | 'direct-link' | 'large-banner' | 'mobile-banner' | 'mobile-banner-320x50' | 'leaderboard-728x90';
+  adType: 'banner-468x60' | 'banner-300x250' | 'skyscraper-160x300' | 'skyscraper-160x600' | 'container' | 'direct-link' | 'large-banner' | 'mobile-banner' | 'mobile-banner-320x50' | 'leaderboard-728x90' | 'google-banner' | 'google-square' | 'google-leaderboard' | 'google-skyscraper' | 'google-mobile';
   onClick: () => void;
   className?: string;
   title?: string;
@@ -285,6 +286,96 @@ export default function RealAdContainer({ adType, onClick, className = '', title
                 </Script>
                 <Script src="https://www.highperformanceformat.com/a1bc5a1e59c5468243f3048190ac9fa9/invoke.js" />
               </div>
+            </div>
+          </div>
+        );
+
+      case 'google-banner':
+        return (
+          <div className={`bg-slate-800 border border-slate-700 rounded-lg overflow-hidden hover:border-blue-500 transition-all duration-300 ${className}`} onClick={handleAdClick}>
+            {title && (
+              <div className="bg-blue-600 px-4 py-2 text-center">
+                <span className="text-xs text-white font-medium uppercase tracking-wide">{title}</span>
+              </div>
+            )}
+            <div className="p-3">
+              <GoogleAd
+                adSlot="1234567890"
+                adFormat="rectangle"
+                style={{ display: 'block', width: '300px', height: '250px' }}
+              />
+            </div>
+          </div>
+        );
+
+      case 'google-square':
+        return (
+          <div className={`bg-slate-800 border border-slate-700 rounded-lg overflow-hidden hover:border-green-500 transition-all duration-300 ${className}`} onClick={handleAdClick}>
+            {title && (
+              <div className="bg-green-600 px-4 py-2 text-center">
+                <span className="text-xs text-white font-medium uppercase tracking-wide">{title}</span>
+              </div>
+            )}
+            <div className="p-3">
+              <GoogleAd
+                adSlot="1234567891"
+                adFormat="rectangle"
+                style={{ display: 'block', width: '300px', height: '300px' }}
+              />
+            </div>
+          </div>
+        );
+
+      case 'google-leaderboard':
+        return (
+          <div className={`bg-slate-800 border border-slate-700 rounded-lg overflow-hidden hover:border-purple-500 transition-all duration-300 ${className}`} onClick={handleAdClick}>
+            {title && (
+              <div className="bg-purple-600 px-4 py-2 text-center">
+                <span className="text-xs text-white font-medium uppercase tracking-wide">{title}</span>
+              </div>
+            )}
+            <div className="p-3">
+              <GoogleAd
+                adSlot="1234567892"
+                adFormat="horizontal"
+                style={{ display: 'block', width: '728px', height: '90px' }}
+              />
+            </div>
+          </div>
+        );
+
+      case 'google-skyscraper':
+        return (
+          <div className={`bg-slate-800 border border-slate-700 rounded-lg overflow-hidden hover:border-indigo-500 transition-all duration-300 ${className}`} onClick={handleAdClick}>
+            {title && (
+              <div className="bg-indigo-600 px-3 py-2 text-center">
+                <span className="text-xs text-white font-medium uppercase tracking-wide">{title}</span>
+              </div>
+            )}
+            <div className="p-3">
+              <GoogleAd
+                adSlot="1234567893"
+                adFormat="vertical"
+                style={{ display: 'block', width: '160px', height: '600px' }}
+              />
+            </div>
+          </div>
+        );
+
+      case 'google-mobile':
+        return (
+          <div className={`bg-slate-800 border border-slate-700 rounded-lg overflow-hidden hover:border-cyan-500 transition-all duration-300 ${className}`} onClick={handleAdClick}>
+            {title && (
+              <div className="bg-cyan-600 px-4 py-2 text-center">
+                <span className="text-xs text-white font-medium uppercase tracking-wide">{title}</span>
+              </div>
+            )}
+            <div className="p-3">
+              <GoogleAd
+                adSlot="1234567894"
+                adFormat="rectangle"
+                style={{ display: 'block', width: '320px', height: '50px' }}
+              />
             </div>
           </div>
         );

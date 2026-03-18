@@ -26,6 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google AdSense */}
+        <Script 
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6122051785566009"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+        
         {/* Anti-Adblock Protection Script - Load First */}
         <Script 
           src="https://archaicmsflip.com/ce/98/7d/ce987d5617b66a4e3f971d1345b37f99.js"

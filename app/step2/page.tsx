@@ -51,13 +51,20 @@ export default function Step2() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-4">
-        {/* Top Banner Ad - Use leaderboard */}
+        {/* Top Banner Ad - Mix of Google AdSense and other networks */}
         <div className="mb-4">
-          <RealAdContainer 
-            adType="leaderboard-728x90" 
-            onClick={handleAdClick}
-            title="Advertisement"
-          />
+          <div className="grid md:grid-cols-2 gap-4">
+            <RealAdContainer 
+              adType="google-leaderboard" 
+              onClick={handleAdClick}
+              title="Google AdSense"
+            />
+            <RealAdContainer 
+              adType="leaderboard-728x90" 
+              onClick={handleAdClick}
+              title="Advertisement"
+            />
+          </div>
         </div>
 
         {/* Timer and Progress */}
@@ -105,12 +112,12 @@ export default function Step2() {
 
           {/* Center Content */}
           <div className="lg:col-span-8">
-            {/* Ad Grid - More ads for step 2 */}
+            {/* Ad Grid - More ads for step 2 with Google AdSense */}
             <div className="grid md:grid-cols-3 gap-4 mb-4">
               <RealAdContainer 
-                adType="banner-300x250" 
+                adType="google-banner" 
                 onClick={handleAdClick}
-                title="Advertisement"
+                title="Google AdSense"
               />
               <RealAdContainer 
                 adType="banner-300x250" 

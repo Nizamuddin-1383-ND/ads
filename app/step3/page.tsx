@@ -54,13 +54,20 @@ export default function Step3() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-4">
-        {/* Top Banner Ad - Use leaderboard */}
+        {/* Top Banner Ad - Mix of Google AdSense and other networks */}
         <div className="mb-4">
-          <RealAdContainer 
-            adType="leaderboard-728x90" 
-            onClick={handleAdClick}
-            title="Premium Advertisement"
-          />
+          <div className="grid md:grid-cols-2 gap-4">
+            <RealAdContainer 
+              adType="google-leaderboard" 
+              onClick={handleAdClick}
+              title="Google AdSense Premium"
+            />
+            <RealAdContainer 
+              adType="leaderboard-728x90" 
+              onClick={handleAdClick}
+              title="Premium Advertisement"
+            />
+          </div>
         </div>
 
         {/* Timer and Progress */}
@@ -114,12 +121,12 @@ export default function Step3() {
 
           {/* Center Content */}
           <div className="lg:col-span-8">
-            {/* Main Ad Grid */}
+            {/* Main Ad Grid with Google AdSense */}
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               <RealAdContainer 
-                adType="banner-300x250" 
+                adType="google-banner" 
                 onClick={handleAdClick}
-                title="Premium Ad"
+                title="Google AdSense Premium"
               />
               <RealAdContainer 
                 adType="banner-300x250" 
